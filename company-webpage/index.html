@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.Ez — Healthcare, connected</title>
+<link rel="stylesheet" href="../theme.css">
+<style>
+  nav { display: flex; justify-content: space-between; align-items: center;
+        padding: 1rem 6vw; position: sticky; top: 0; background: var(--white);
+        border-bottom: 1px solid var(--blue-light); }
+  .logo { font-size: 1.4rem; font-weight: 800; }
+  .logo span { color: var(--green-dark); }
+  nav .links a { margin-left: 1.5rem; color: var(--ink); font-weight: 500; }
+  .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem;
+          align-items: center; padding: 5rem 6vw;
+          background: linear-gradient(135deg, var(--blue-light), var(--green-light)); }
+  .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+  .hero p { color: var(--muted); font-size: 1.15rem; margin-bottom: 1.6rem; }
+  .hero-art { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .hero-art .card { text-align: center; font-size: 2rem; padding: 2rem 1rem; }
+  .hero-art .card small { display: block; font-size: .85rem; color: var(--muted); margin-top: .5rem; }
+  section { padding: 4rem 6vw; }
+  section h2 { text-align: center; margin-bottom: 2.5rem; font-size: 2rem; }
+  .grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .grid4 .card h3 { margin: .6rem 0 .4rem; }
+  .grid4 .card p { color: var(--muted); font-size: .95rem; }
+  .emoji { font-size: 2rem; }
+  .how { background: var(--blue-light); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; counter-reset: step; }
+  .steps .card::before { counter-increment: step; content: counter(step);
+      display: inline-flex; width: 2rem; height: 2rem; border-radius: 50%;
+      background: var(--green); font-weight: 700; align-items: center;
+      justify-content: center; margin-bottom: .6rem; }
+  footer { padding: 2.5rem 6vw; background: var(--ink); color: var(--blue-light);
+           display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">M.<span>Ez</span></div>
+  <div class="links">
+    <a href="#users">Who it's for</a>
+    <a href="#how">How it works</a>
+    <a href="#" class="btn green">Get started</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <h1>Patients, doctors, hospitals &amp; pharmacies — one conversation.</h1>
+    <p>M.Ez connects everyone in your care journey. Book appointments, consult doctors, send prescriptions to pharmacies, and manage hospital workflows — with ease and speed.</p>
+    <a href="#" class="btn">Download the app</a>
+    <a href="#users" class="btn outline" style="margin-left:.6rem">Learn more</a>
+  </div>
+  <div class="hero-art">
+    <div class="card">🧑‍⚕️<small>Doctors</small></div>
+    <div class="card">🧑<small>Patients</small></div>
+    <div class="card">🏥<small>Hospitals</small></div>
+    <div class="card">💊<small>Pharmacies</small></div>
+  </div>
+</div>
+
+<section id="users">
+  <h2>One platform, four interfaces</h2>
+  <div class="grid4">
+    <div class="card"><div class="emoji">📱</div><h3>Patient App</h3><p>Book visits, chat with your doctor, receive prescriptions and reminders — on Android &amp; iOS.</p></div>
+    <div class="card"><div class="emoji">🩺</div><h3>Doctor App</h3><p>Manage schedules, consult patients, and e-prescribe from mobile or tablet.</p></div>
+    <div class="card"><div class="emoji">💊</div><h3>Pharmacy Portal</h3><p>Receive digital prescriptions, confirm stock, and notify patients when orders are ready.</p></div>
+    <div class="card"><div class="emoji">🏥</div><h3>Hospital Admin</h3><p>Oversee departments, staff, beds and appointments from a single web dashboard.</p></div>
+  </div>
+</section>
+
+<section id="how" class="how">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="card"><h3>Book</h3><p>Patient books a doctor or hospital visit in seconds.</p></div>
+    <div class="card"><h3>Consult</h3><p>Doctor consults in person or via chat/video and prescribes digitally.</p></div>
+    <div class="card"><h3>Fulfil</h3><p>Prescription lands at the patient's chosen pharmacy instantly.</p></div>
+    <div class="card"><h3>Follow up</h3><p>Reminders, refills and records — all in one place.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div><strong>M.Ez</strong> — Healthcare, connected.</div>
+  <div>© 2026 M.Ez · Privacy · Terms · Contact</div>
+</footer>
+</body>
+</html>

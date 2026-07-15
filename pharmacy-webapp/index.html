@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.Ez Pharmacy Portal — Prototype</title>
+<link rel="stylesheet" href="../theme.css">
+<style>
+  body { display: flex; min-height: 100vh; background: var(--blue-light); }
+  aside { width: 220px; background: var(--white); border-right: 1px solid var(--blue-light);
+          padding: 1.5rem 1rem; flex-shrink: 0; }
+  aside .logo { font-weight: 800; font-size: 1.2rem; margin-bottom: 2rem; }
+  aside .logo span { color: var(--green-dark); }
+  aside a { display: block; padding: .6rem .8rem; border-radius: 10px; color: var(--ink); margin-bottom: .3rem; }
+  aside a.active { background: var(--green-light); font-weight: 700; color: var(--green-dark); }
+  main { flex: 1; padding: 2rem; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .stats strong { font-size: 1.8rem; display: block; }
+  .stats small { color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; background: var(--white);
+          border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  th, td { text-align: left; padding: .8rem 1rem; border-bottom: 1px solid var(--blue-light); font-size: .93rem; }
+  th { background: var(--blue-light); color: var(--blue-dark); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+  tr:last-child td { border-bottom: none; }
+  .low { color: #b98a2c; font-weight: 700; }
+</style>
+</head>
+<body>
+<aside>
+  <div class="logo">M.<span>Ez</span> Pharmacy</div>
+  <a href="#" class="active">📥 Prescriptions</a>
+  <a href="#">📦 Inventory</a>
+  <a href="#">🧑 Patients</a>
+  <a href="#">📊 Reports</a>
+  <a href="#">⚙️ Settings</a>
+</aside>
+
+<main>
+  <div class="topbar">
+    <div><h1 style="font-size:1.5rem">Incoming prescriptions</h1><small style="color:var(--muted)">GreenLeaf Pharmacy · Wed 15 Jul 2026</small></div>
+    <span class="tag green">● Online — receiving orders</span>
+  </div>
+
+  <div class="stats">
+    <div class="card"><strong>8</strong><small>New today</small></div>
+    <div class="card"><strong>3</strong><small>Preparing</small></div>
+    <div class="card"><strong>5</strong><small>Ready for pickup</small></div>
+    <div class="card"><strong class="low">2</strong><small>Low-stock items</small></div>
+  </div>
+
+  <table>
+    <tr><th>Rx #</th><th>Patient</th><th>Medication</th><th>Prescriber</th><th>Status</th><th></th></tr>
+    <tr><td>RX-2214</td><td>Viraj M.</td><td>Atorvastatin 10mg × 30</td><td>Dr. Mehta</td><td><span class="tag green">Ready</span></td><td><button class="btn green" onclick="alert('Patient notified ✓')">Notify patient</button></td></tr>
+    <tr><td>RX-2215</td><td>Anita S.</td><td>Metoprolol 25mg × 15</td><td>Dr. Mehta</td><td><span class="tag blue">New</span></td><td><button class="btn">Accept</button></td></tr>
+    <tr><td>RX-2216</td><td>Ramesh K.</td><td>Clopidogrel 75mg × 30</td><td>Dr. Mehta</td><td><span class="tag amber">Preparing</span></td><td><button class="btn outline">Mark ready</button></td></tr>
+    <tr><td>RX-2217</td><td>Farhan A.</td><td>Cetirizine 10mg × 10</td><td>Dr. Rao</td><td><span class="tag blue">New</span></td><td><button class="btn">Accept</button></td></tr>
+    <tr><td>RX-2218</td><td>Priya N.</td><td>Insulin Glargine <span class="low">(low stock)</span></td><td>Dr. Iyer</td><td><span class="tag blue">New</span></td><td><button class="btn outline">Check stock</button></td></tr>
+  </table>
+</main>
+</body>
+</html>

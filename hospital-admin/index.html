@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.Ez Hospital Admin — Prototype</title>
+<link rel="stylesheet" href="../theme.css">
+<style>
+  body { display: flex; min-height: 100vh; background: var(--green-light); }
+  aside { width: 220px; background: var(--white); border-right: 1px solid var(--blue-light);
+          padding: 1.5rem 1rem; flex-shrink: 0; }
+  aside .logo { font-weight: 800; font-size: 1.2rem; margin-bottom: 2rem; }
+  aside .logo span { color: var(--blue-dark); }
+  aside a { display: block; padding: .6rem .8rem; border-radius: 10px; color: var(--ink); margin-bottom: .3rem; }
+  aside a.active { background: var(--blue-light); font-weight: 700; color: var(--blue-dark); }
+  main { flex: 1; padding: 2rem; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .stats strong { font-size: 1.8rem; display: block; }
+  .stats small { color: var(--muted); }
+  .cols { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; }
+  table { width: 100%; border-collapse: collapse; background: var(--white);
+          border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  th, td { text-align: left; padding: .75rem 1rem; border-bottom: 1px solid var(--blue-light); font-size: .93rem; }
+  th { background: var(--green-light); color: var(--green-dark); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+  tr:last-child td { border-bottom: none; }
+  .bar { height: 10px; background: var(--blue-light); border-radius: 999px; overflow: hidden; margin-top: .35rem; }
+  .bar i { display: block; height: 100%; background: var(--blue); }
+  .bar.hi i { background: #f2c66d; }
+  .dept { margin-bottom: 1rem; }
+  .dept .row { display: flex; justify-content: space-between; font-size: .92rem; }
+  @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<aside>
+  <div class="logo">M.<span>Ez</span> Admin</div>
+  <a href="#" class="active">📊 Overview</a>
+  <a href="#">📅 Appointments</a>
+  <a href="#">🧑‍⚕️ Staff</a>
+  <a href="#">🛏️ Beds &amp; wards</a>
+  <a href="#">💊 Pharmacy links</a>
+  <a href="#">⚙️ Settings</a>
+</aside>
+
+<main>
+  <div class="topbar">
+    <div><h1 style="font-size:1.5rem">City Care Hospital — Overview</h1><small style="color:var(--muted)">Wed 15 Jul 2026</small></div>
+    <button class="btn">+ New appointment</button>
+  </div>
+
+  <div class="stats">
+    <div class="card"><strong>142</strong><small>Appointments today</small></div>
+    <div class="card"><strong>38</strong><small>Doctors on duty</small></div>
+    <div class="card"><strong>81%</strong><small>Bed occupancy</small></div>
+    <div class="card"><strong>6</strong><small>Pending approvals</small></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <table>
+        <tr><th>Time</th><th>Patient</th><th>Doctor</th><th>Dept.</th><th>Status</th></tr>
+        <tr><td>10:30</td><td>Viraj M.</td><td>Dr. Mehta</td><td>Cardiology</td><td><span class="tag blue">Checked-in</span></td></tr>
+        <tr><td>11:00</td><td>Anita S.</td><td>Dr. Mehta</td><td>Cardiology</td><td><span class="tag amber">Waiting</span></td></tr>
+        <tr><td>11:15</td><td>Priya N.</td><td>Dr. Iyer</td><td>General</td><td><span class="tag green">Confirmed</span></td></tr>
+        <tr><td>11:30</td><td>Ramesh K.</td><td>Dr. Mehta</td><td>Cardiology</td><td><span class="tag amber">Waiting</span></td></tr>
+        <tr><td>12:00</td><td>Farhan A.</td><td>Dr. Mehta</td><td>Tele-consult</td><td><span class="tag green">Confirmed</span></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-bottom:1rem">Ward occupancy</h3>
+      <div class="dept"><div class="row"><span>ICU</span><strong>18/20</strong></div><div class="bar hi"><i style="width:90%"></i></div></div>
+      <div class="dept"><div class="row"><span>Cardiology</span><strong>24/30</strong></div><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="dept"><div class="row"><span>General</span><strong>41/60</strong></div><div class="bar"><i style="width:68%"></i></div></div>
+      <div class="dept"><div class="row"><span>Maternity</span><strong>12/25</strong></div><div class="bar"><i style="width:48%"></i></div></div>
+      <div class="dept"><div class="row"><span>Pediatrics</span><strong>9/20</strong></div><div class="bar"><i style="width:45%"></i></div></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
